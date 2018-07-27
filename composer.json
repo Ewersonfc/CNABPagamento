@@ -1,0 +1,20 @@
+{
+    "name": "ewersonfc/cnab-pagamento",
+    "description": "CNAB Pagamento",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ewerson Carvalho",
+            "email": "ewersonfc@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ewersonfc\\CNABPagamento\\": "src/"
+        }
+    }
+}
