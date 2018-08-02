@@ -19,17 +19,19 @@ class Bancos
     const SAFRA = 422;
 
     /**
-     * Bancos constructor.
      * @param int $banco
+     * @return array
      * @throws CNABPagamentoException
      */
-    function __construct(int $banco)
+    public static function getBankData(int $banco)
     {
         switch ($banco) {
             case self::SAFRA:
                 return [
                     'codigo_banco' => '422',
-                    'nome_banco' => 'Safra'
+                    'nome_banco' => 'Safra',
+                    'path_remessa' => realpath(dirname(__FILE__)."/../resources/Safra/remessa"),
+                    'path_retorno' => realpath(dirname(__FILE__)."/../resources/Safra/retorno")
                 ];
             default:
                 throw new CNABPagamentoException("Banco não encontrado.");

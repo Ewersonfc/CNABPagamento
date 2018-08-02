@@ -1,0 +1,86 @@
+#baseado na documentação do BANCO SAFRA S/A
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default:  '0'
+codigo_arquivo:
+  pos: [2, 2]
+  picture: '9(01)'
+  default: 1
+identficacao_arquivo:
+  pos: [3, 9]
+  picture: 'X(07)'
+  default: 'REMESSA'
+codigo_servico:
+  pos: [10, 11]
+  picture: '9(02)'
+  default: '11'
+identificacao_servico:
+  pos: [12, 26]
+  picture: 'X(15)'
+  default: 'PAGTOS FORNECED'
+numero_conta:
+  pos: [27, 34]
+  picture: '9(08)'
+  default: ''
+validar_trailler:
+  pos: [35, 35]
+  picture: 'X(01)'
+  default: ''
+brancos01:
+  pos: [36, 37]
+  picture: 'X(02)'
+  default: ''
+codigo_agencia:
+  pos: [38, 44]
+  picture: '9(07)'
+  default: ''
+brancos02:
+  pos: [45, 46]
+  picture: 'X(02)'
+  default: ''
+nome_cliente:
+  pos: [47, 76]
+  picture: 'X(30)'
+  default: ''
+codigo_banco:
+  pos: [77, 79]
+  picture: '9(03)'
+  default: '422'
+nome_banco:
+  pos: [80, 94]
+  picture: 'X(15)'
+  default: ''
+data_arquivo:
+  pos: [95, 100]
+  picture: '9(06)'
+  date_format: '%d%m%y'
+origem:
+  pos: [101, 101]
+  picture: '9(01)'
+  default: ''
+terceiro:
+  pos: [102, 103]
+  picture: '9(02)'
+  default: ''
+brancos03:
+  pos: [104, 387]
+  picture: 'X(284)'
+  default: ''
+valida_documento:
+  pos: [388, 388]
+  picture: 'X(01)'
+  default: ''
+numero_arquivo:
+  pos: [389, 394]
+  picture: '9(06)'
+  default: ''
+numero_registro:
+  pos: [395, 400]
+  picture: '9(06)'
+  default: '000001'
+
+
+
+
+

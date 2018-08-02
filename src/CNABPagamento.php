@@ -8,6 +8,8 @@
 namespace Ewersonfc\CNABPagamento;
 
 use Ewersonfc\CNABPagamento\Entities\DataFile;
+use Ewersonfc\CNABPagamento\Services\ServiceRemessa;
+
 /**
  * Class CNABPagamento
  */
@@ -18,6 +20,8 @@ class CNABPagamento
      */
     private $banco;
 
+    private $serviceRemessa;
+
     /**
      * CNABPagamento constructor.
      * @param $banco
@@ -25,17 +29,18 @@ class CNABPagamento
      */
     function __construct($banco)
     {
-        $this->banco = new Bancos($banco);
+        $this->serviceRemessa = new ServiceRemessa(Bancos::getBankData($banco));
     }
 
     /**
      * @param DataFile $dataFile
+     * @throws Exceptions\CNABPagamentoException
+     * @throws Exceptions\HeaderYamlException
+     * @throws Exceptions\LayoutException
      */
     public function gerarArquivo(DataFile $dataFile)
     {
-        echo '<pre>';
-        print_r($dataFile);
-        echo '</pre>';
+        $this->serviceRemessa->makeFile($dataFile);
     }
 
 }

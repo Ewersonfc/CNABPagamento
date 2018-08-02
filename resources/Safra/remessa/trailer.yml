@@ -1,0 +1,39 @@
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default: '1'
+brancos01:
+  pos: [2, 124]
+  picture: 'X(123)'
+  default: ''
+valortotal:
+  pos: [125, 139]
+  picture: '9(15)'
+brancos02:
+  pos: [140, 248]
+  picture: 'X(109)'
+  default: ''
+total_abatimento:
+  pos: [249, 263]
+  picture: '9(15)'
+brancos03:
+  pos: [264, 345]
+  picture: 'X(82)'
+  default: ''
+total_juros_mora:
+  pos: [346, 360]
+  picture: '9(15)'
+brancos04:
+  pos: [361, 364]
+  picture: 'X(04)'
+  default: ''
+total_valor_autorizado:
+  pos: [365, 379]
+  picture: '9(15)'
+brancos05:
+  pos: [380, 394]
+  picture: 'X(15)'
+  default: ''
+numero_sequencial:
+  pos: [395, 400]
+  picture: '9(06)'

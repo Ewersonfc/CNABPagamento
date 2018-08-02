@@ -1,0 +1,139 @@
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default: '1'
+codigo_inscricao:
+  pos: [2, 3]
+  picture: '9(02)'
+numero_inscricao:
+  pos: [4, 17]
+  picture: '9(14)'
+numero_conta:
+  pos: [18, 25]
+  picture: '9(08)'
+brancos01:
+  pos: [26, 28]
+  picture: 'X(03)'
+  default:  ''
+codigo_agencia:
+  pos: [29, 35]
+  picture: '9(07)'
+  default:  ''
+brancos02:
+  pos: [36, 37]
+  picture: 'X(02)'
+  default:  ''
+exclusivo:
+  pos: [38, 62]
+  picture: 'X(25)'
+  default:  ''
+codigo_fornecedor:
+  pos: [63, 76]
+  picture: '9(14)'
+  default:  ''
+tipo_documento:
+  pos: [77, 79]
+  picture: 'X(03)'
+  default:  ''
+numero_compromisso:
+  pos: [80, 89]
+  picture: 'X(10)'
+  default:  ''
+sequencia_compromisso:
+  pos: [90, 90]
+  picture: 'X(01)'
+  efault:  ''
+brancos03:
+  pos: [91, 107]
+  picture: 'X(01)'
+  default:  ''
+codigo_operacao:
+  pos: [108, 108]
+  picture: 'X(01)'
+  default:  'C'
+codigo_ocorrencia:
+  pos: [109, 110]
+  picture: '9(02)'
+seu_numero_compromisso:
+  pos: [111, 120]
+  picture: 'X(10)'
+vencimento:
+  pos: [121, 126]
+  picture: '9(06)'
+valor_pagamento:
+  pos: [127, 139]
+  picture: '9(13)'
+tipo_pagamento:
+  pos: [140, 142]
+  picture: 'X(03)'
+  default: 'COB'
+banco_destino:
+  pos: [143, 145]
+  picture: '9(03)'
+agencia_destino:
+  pos: [146, 152]
+  picture: '9(07)'
+zeros01:
+  pos: [153, 155]
+  picture: '9(03)'
+  default: '000'
+conta_corrente_destino:
+  pos: [156, 165]
+  picture: '9(10)'
+brancos04:
+  pos: [166, 185]
+  picture: 'X(20)'
+  default: ''
+agencia_pagamento:
+  pos: [186, 192]
+  picture: '9(07)'
+nosso_numero:
+  pos: [193, 208]
+  picture: 'X(16)'
+brancos05:
+  pos: [209, 247]
+  picture: 'X(39)'
+  default: ''
+banco_portador:
+  pos: [248, 250]
+  piscture: '9(03)'
+abatimento:
+  pos: [251, 263]
+  picture: '9(13)'
+nome_fornecedor:
+  pos: [264, 293]
+  picture: 'X(30)'
+brancos06:
+  pos: [294, 303]
+  picture: 'X(10)'
+  default: ''
+codigo_barras:
+  pos: [304, 347]
+  picture: '9(44)'
+juros_de_mora:
+  pos: [348, 360]
+  picture: '9(13)'
+data_pagamento:
+  pos: [361, 366]
+  picture: '9(06)'
+  date_format: '%d%m%y'
+valor_autorizado:
+  pos: [367, 379]
+  picture: '9(13)'
+moeda:
+  pos: [380, 383]
+  picture: 'X(04)'
+  default: 'REAL'
+carteira:
+  pos: [384, 387]
+  picture: 'X(04)'
+especie_documento:
+  pos: [388, 390]
+  picture: 'X(03)'
+brancos07:
+  pos: [391, 394]
+  picture: 'X(04)'
+  default: ''
+numero_sequencial_registro:
+  pos: [395, 400]
+  picture: '9(06)'
