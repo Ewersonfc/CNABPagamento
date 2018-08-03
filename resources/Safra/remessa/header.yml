@@ -2,7 +2,7 @@
 codigo_registro:
   pos: [1, 1]
   picture: '9(01)'
-  default:  '0'
+  default:  0
 codigo_arquivo:
   pos: [2, 2]
   picture: '9(01)'

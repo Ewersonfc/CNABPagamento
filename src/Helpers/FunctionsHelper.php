@@ -22,5 +22,25 @@ class FunctionsHelper
     {
         return preg_match('/[X9]\(\d+\)(V9\(\d+\))?/', $picture);
     }
-}
 
+    /**
+     * @param $picture
+     * @return array
+     */
+    public static function explodePicture($picture)
+    {
+        $pictureExploded = explode("-", preg_replace("/[^0-9A-Z]/", "-", $picture));
+
+        return [
+            'firstType' => $pictureExploded[0],
+            'firstQuantity' => $pictureExploded[1],
+            'secondType' => !isset($pictureExploded[2])?: $pictureExploded[2],
+            'secondQuantity' => !isset($pictureExploded[3])?: $pictureExploded[3]
+        ];
+    }
+
+    public static function treatField($value, $positionInit, $positionFinish, $quantityCharacter, $defaultValue = null)
+    {
+
+    }
+}

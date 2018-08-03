@@ -96,7 +96,7 @@ brancos05:
   default: ''
 banco_portador:
   pos: [248, 250]
-  piscture: '9(03)'
+  picture: '9(03)'
 abatimento:
   pos: [251, 263]
   picture: '9(13)'

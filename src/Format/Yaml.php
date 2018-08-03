@@ -8,6 +8,7 @@
 namespace Ewersonfc\CNABPagamento\Format;
 use Ewersonfc\CNABPagamento\Exceptions\HeaderYamlException;
 use Ewersonfc\CNABPagamento\Exceptions\LayoutException;
+use Ewersonfc\CNABPagamento\Helpers\FunctionsHelper;
 
 /**
  * Class Yaml
@@ -91,6 +92,9 @@ class Yaml extends \Symfony\Component\Yaml\Yaml
             $pos_start = $field['pos'][0];
             $pos_end = $field['pos'][1];
             foreach($this->fields as $current_name => $current_field){
+                if(!FunctionsHelper::picture($current_field['picture']))
+                    throw new LayoutException("The picture of the attribute {$current_name} is invalid.");
+
                 if ($current_name === $name)
                     continue;
                 $current_pos_start = $current_field['pos'][0];

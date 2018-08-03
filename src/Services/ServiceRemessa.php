@@ -29,18 +29,12 @@ class ServiceRemessa
     private $yaml;
 
     /**
-     *
-     */
-    private $remessaFactory;
-
-    /**
      * ServiceRemessa constructor.
      */
     function __construct($banco)
     {
         $this->banco = $banco;
         $this->yaml = new Yaml($this->banco['path_remessa']);
-        $this->remessaFactory = new RemessaFactory;
     }
 
     /**
@@ -123,7 +117,7 @@ class ServiceRemessa
         $matchHeader = $this->matchHeaderFileAndHeaderData($ymlHeaderToArray, $dataFile);
         $matchDetail = $this->matchDetailFileAndDetailData($ymlDetailToArray, $dataFile);
 
-
-        return $this->remessaFactory->generateFile($matchHeader, $matchDetail);
+        $remessaFactory = new RemessaFactory($matchHeader, $matchDetail);
+        return $remessaFactory->generateFile();
     }
 }
