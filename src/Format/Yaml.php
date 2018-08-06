@@ -69,6 +69,17 @@ class Yaml extends \Symfony\Component\Yaml\Yaml
         return $this->validateLayout();
     }
 
+    public function readTrailer()
+    {
+        $filename = "{$this->path}/trailer.yml";
+
+        if(!file_exists($filename))
+            throw new HeaderYamlException("Arquivo de configuração trailer.yml não encontrado em: $this->path");
+
+        $this->fields = $this->parse(file_get_contents($filename));
+
+        return $this->validateLayout();
+    }
     /**
      * @return mixed
      * @throws LayoutException

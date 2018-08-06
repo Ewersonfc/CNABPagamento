@@ -1,7 +1,7 @@
 codigo_registro:
   pos: [1, 1]
   picture: '9(01)'
-  default: '1'
+  default: 9
 brancos01:
   pos: [2, 124]
   picture: 'X(123)'

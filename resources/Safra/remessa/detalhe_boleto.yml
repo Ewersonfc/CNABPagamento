@@ -1,10 +1,11 @@
 codigo_registro:
   pos: [1, 1]
   picture: '9(01)'
-  default: '1'
+  default: 1
 codigo_inscricao:
   pos: [2, 3]
   picture: '9(02)'
+  default: 2
 numero_inscricao:
   pos: [4, 17]
   picture: '9(14)'
@@ -42,10 +43,10 @@ numero_compromisso:
 sequencia_compromisso:
   pos: [90, 90]
   picture: 'X(01)'
-  efault:  ''
+  default:  ''
 brancos03:
   pos: [91, 107]
-  picture: 'X(01)'
+  picture: 'X(17)'
   default:  ''
 codigo_operacao:
   pos: [108, 108]

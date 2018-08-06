@@ -27,6 +27,7 @@ $header = [
 
 $detail = [];
 $detail[] = [
+    'tipo_transacao' => 'boleto',
  //   'codigo_registro' => 1, // OPCIONAL
   //  'codigo_inscricao' => 02, // 01 CNPJ E 02 CPF
     'numero_inscricao' => '09127271000187',
@@ -44,11 +45,11 @@ $detail[] = [
     'valor_pagamento' => 100.00, // irá preencher com 0 à esquerda
     'tipo_pagamento' => 'COB', // Opcional
     'banco_destino' => 001,
-//    'agencia_destino' => , // Opcional
-//    'conta_corrente_destino' => ,// Opcional
-//    'agencia_pagamento' => , //Verificar se não houver
-//    'nosso_numero' => , // opcional
-//    'banco_portador' => , // Verificar
+    'agencia_destino' => '1236547', // Opcional
+    'conta_corrente_destino' => '1010101010',// Opcional
+    'agencia_pagamento' => '1234567', //Verificar se não houver
+    'nosso_numero' => '506012548', // opcional
+    'banco_portador' => '001', // Verificar
     'abatimento' => 20.00, // // irá preencher com 0 à esquerda
     'nome_fornecedor' => 'Ewerson Ferreira Carvalho',
     'codigo_barras' => '00191761000000113330000003071378005071620317', // linha digitável informada de acordo com a documentação do banco safra
@@ -56,14 +57,27 @@ $detail[] = [
     'data_pagamento' => 250718, // data que deseja liquidar o título
     'valor_autorizado' => 80.00, // Valor total - abatimento + juros se houver
     'moeda' => 'REAL', // OPCIONAL
-//    'carteira' => , // OPCIONAL
-//    'especie_documento' => , // OPCIONAL
+    'carteira' => '1727', // OPCIONAL
+    'especie_documento' => 'DUP', // OPCIONAL
     'numero_sequencial_registro' => '000002'
+];
+
+$trailer = [
+    'valortotal' => 100.00,
+    'total_abatimento' =>  20.00,
+    'total_juros_mora' => 5.00,
+    'total_valor_autorizado' => 80.00,
 ];
 
 $datafile = new DataFile;
 $datafile->header = $header;
 $datafile->detail = $detail;
+$datafile->trailer = $trailer;
 
 $CNABPagamento = new CNABPagamento(422);
-$CNABPagamento->gerarArquivo($datafile);
+$file = $CNABPagamento->gerarArquivo($datafile);
+
+
+print_r($file);
+
+

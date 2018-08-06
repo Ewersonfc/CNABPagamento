@@ -34,13 +34,14 @@ class CNABPagamento
 
     /**
      * @param DataFile $dataFile
+     * @return string
      * @throws Exceptions\CNABPagamentoException
      * @throws Exceptions\HeaderYamlException
      * @throws Exceptions\LayoutException
      */
     public function gerarArquivo(DataFile $dataFile)
     {
-        $this->serviceRemessa->makeFile($dataFile);
+        return $this->serviceRemessa->makeFile($dataFile);
     }
 
 }
