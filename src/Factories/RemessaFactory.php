@@ -77,7 +77,7 @@ class RemessaFactory
 
         if(isset($fieldData['value']) && $valueDefined === null) {
             $valueDefined = $fieldData['value'];
-        } else if($valueDefined === null){
+        } else if($valueDefined === null && isset($fieldData['default'])){
             $valueDefined = $fieldData['default'];
         }
 

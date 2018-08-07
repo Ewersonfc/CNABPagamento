@@ -111,7 +111,7 @@ class ServiceRemessa
     private function matchDetailFileAndDetailData(DataFile $dataFile)
     {
         if(!array_key_exists("0", $dataFile->detail))
-            throw new CNABPagamentoException();
+            throw new CNABPagamentoException("O array de detalhes está inválido, consulte a documentação.");
 
         $detailMadeByYmlStructure = [];
         foreach($dataFile->detail as $key => $data) {

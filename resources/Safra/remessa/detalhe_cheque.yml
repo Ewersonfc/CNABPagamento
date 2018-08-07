@@ -1,0 +1,119 @@
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default: 1
+codigo_inscricao:
+  pos: [2, 3]
+  picture: '9(02)'
+  default: 2
+numero_inscricao:
+  pos: [4, 17]
+  picture: '9(14)'
+numero_conta:
+  pos: [18, 25]
+  picture: '9(08)'
+brancos01:
+  pos: [26, 28]
+  picture: 'X(03)'
+  default:  ''
+codigo_agencia:
+  pos: [29, 35]
+  picture: '9(07)'
+  default:  ''
+brancos02:
+  pos: [36, 37]
+  picture: 'X(02)'
+  default:  ''
+exclusivo:
+  pos: [38, 62]
+  picture: 'X(25)'
+  default:  ''
+codigo_fornecedor:
+  pos: [63, 76]
+  picture: '9(14)'
+  default:  ''
+tipo_documento:
+  pos: [77, 79]
+  picture: 'X(03)'
+  default:  ''
+numero_compromisso:
+  pos: [80, 89]
+  picture: 'X(10)'
+  default:  ''
+sequencia_compromisso:
+  pos: [90, 90]
+  picture: 'X(01)'
+  default:  ''
+brancos03:
+  pos: [91, 107]
+  picture: 'X(17)'
+  default:
+codigo_operacao:
+  pos: [108, 108]
+  picture: 'X(01)'
+  default:  'C'
+codigo_ocorrencia:
+  pos: [109, 110]
+  picture: '9(02)'
+seu_numero_compromisso:
+  pos: [111, 120]
+  picture: 'X(10)'
+vencimento:
+  pos: [121, 126]
+  picture: '9(06)'
+valor_pagamento:
+  pos: [127, 139]
+  picture: '9(13)'
+tipo_pagamento:
+  pos: [140, 142]
+  picture: 'X(03)'
+zeros01:
+  pos: [143, 165]
+  picture: 9(23)
+  default: 0
+brancos04:
+  pos: [166, 185]
+  picture: x(20)
+  default: ' '
+agencia_pagamento:
+  pos: [186, 192]
+  picture: 9(07)
+brancos05:
+  pos: [193, 247]
+  picture: X(55)
+  default: ''
+zeros02:
+  pos: [248, 263]
+  picture: 9(16)
+  default: 0
+fornecedor:
+  pos: [264, 293]
+  picture: X(30)
+brancos06:
+  pos: [294, 347]
+  picture: X(54)
+  default: ' '
+zeros03:
+  pos: [348, 360]
+  picture: 9(13)
+  default: 0
+data_pagamento:
+  pos: [361, 366]
+  picture: '9(06)'
+  date_format: '%d%m%y'
+valor_autorizado:
+  pos: [367, 379]
+  picture: '9(13)'
+moeda:
+  pos: [380, 383]
+  picture: 'X(04)'
+  default: 'REAL'
+bracos07:
+  pos: [384, 394]
+  picture: X(11)
+  default: ''
+numero_sequencial_registro:
+  pos: [395, 400]
+  picture: '9(06)'
+
+
