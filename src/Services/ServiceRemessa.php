@@ -54,9 +54,9 @@ class ServiceRemessa
      * @throws \Ewersonfc\CNABPagamento\Exceptions\HeaderYamlException
      * @throws \Ewersonfc\CNABPagamento\Exceptions\LayoutException
      */
-    private function readDetailYml()
+    private function readDetailYml($typeLayout)
     {
-        return $this->yaml->readDetail();
+        return $this->yaml->readDetail($typeLayout);
     }
 
     /**
@@ -68,6 +68,9 @@ class ServiceRemessa
         return $this->yaml->readTrailer();
     }
 
+    /**
+     * @return array
+     */
     private function typeOfPayments()
     {
         return [

@@ -73,7 +73,7 @@ zeros01:
   default: 0
 brancos04:
   pos: [166, 185]
-  picture: x(20)
+  picture: X(20)
   default: ' '
 agencia_pagamento:
   pos: [186, 192]

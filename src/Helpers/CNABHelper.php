@@ -9,10 +9,10 @@
 namespace Ewersonfc\CNABPagamento\Helpers;
 
 /**
- * Class FunctionsHelper
- * @package Ewersonfc\CNABPagamento\Helpers
+ * Class CNABHelper
+ * @package Ewersonfc\CNABPagamento\Helper
  */
-class FunctionsHelper
+class CNABHelper
 {
     /**
      * @param $picture
@@ -37,10 +37,5 @@ class FunctionsHelper
             'secondType' => !isset($pictureExploded[2])?: $pictureExploded[2],
             'secondQuantity' => !isset($pictureExploded[3])?: $pictureExploded[3]
         ];
-    }
-
-    public static function treatField($value, $positionInit, $positionFinish, $quantityCharacter, $defaultValue = null)
-    {
-
     }
 }

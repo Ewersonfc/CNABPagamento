@@ -10,8 +10,7 @@ namespace Ewersonfc\CNABPagamento\Factories;
 
 use Ewersonfc\CNABPagamento\Exceptions\CNABPagamentoException;
 use Ewersonfc\CNABPagamento\Exceptions\LayoutException;
-use Ewersonfc\CNABPagamento\Helpers\FunctionsHelper;
-use function Functional\false;
+use Ewersonfc\CNABPagamento\Helpers\CNABHelper;
 use mikehaertl\tmp\File;
 
 /**
@@ -81,16 +80,15 @@ class RemessaFactory
             $valueDefined = $fieldData['default'];
         }
 
-        $pictureData = FunctionsHelper::explodePicture($fieldData['picture']);
+        $pictureData = CNABHelper::explodePicture($fieldData['picture']);
+
+        if(strlen($valueDefined) > $pictureData['firstQuantity'])
+            throw new LayoutException("O Valor Passado no campo {$nameField} está maior que os campos disponíveis..");
 
         if($pictureData['firstType'] == 9)
             return str_pad($valueDefined, $pictureData['firstQuantity'], "0", STR_PAD_LEFT);
-        if($pictureData['firstType'] == 'X') {
-            if(strlen($valueDefined) > $pictureData['firstQuantity'])
-                throw new LayoutException("O Valor Passado no campo {$nameField} está maior.");
-
+        if($pictureData['firstType'] == 'X')
             return str_pad($valueDefined, $pictureData['firstQuantity'], " ", STR_PAD_LEFT);
-        }
     }
 
     /**

@@ -6,9 +6,11 @@
  * Time: 12:08
  */
 namespace Ewersonfc\CNABPagamento\Format;
+use Ehtl\Model\TipoPagamento;
+use Ewersonfc\CNABPagamento\Constants\TipoTransacao;
 use Ewersonfc\CNABPagamento\Exceptions\HeaderYamlException;
 use Ewersonfc\CNABPagamento\Exceptions\LayoutException;
-use Ewersonfc\CNABPagamento\Helpers\FunctionsHelper;
+use Ewersonfc\CNABPagamento\Helpers\CNABHelper;
 
 /**
  * Class Yaml
@@ -57,12 +59,22 @@ class Yaml extends \Symfony\Component\Yaml\Yaml
      * @throws HeaderYamlException
      * @throws LayoutException
      */
-    public function readDetail()
+    public function readDetail($typeLayout)
     {
-        $filename = "{$this->path}/detalhe_boleto.yml";
+        switch ($typeLayout) {
+            case TipoTransacao::BOLETO:
+                $filename = "{$this->path}/detalhe_boleto.yml";
+                break;
+            case TipoTransacao::TRANSFERENCIA:
+                $filename = "{$this->path}/detalhe_transferencia.yml";
+                break;
+            case TipoTransacao::CHEQUE:
+                $filename = "{$this->path}/detalhe_cheque.yml";
+                break;
+        }
 
         if(!file_exists($filename))
-            throw new HeaderYamlException("Arquivo de configuração detail.yml não encontrado em: $this->path");
+            throw new HeaderYamlException("Arquivo de configuração detail_{$typeLayout}.yml não encontrado em: $this->path");
 
         $this->fields = $this->parse(file_get_contents($filename));
 
@@ -103,7 +115,7 @@ class Yaml extends \Symfony\Component\Yaml\Yaml
             $pos_start = $field['pos'][0];
             $pos_end = $field['pos'][1];
             foreach($this->fields as $current_name => $current_field){
-                if(!FunctionsHelper::picture($current_field['picture']))
+                if(!CNABHelper::picture($current_field['picture']))
                     throw new LayoutException("The picture of the attribute {$current_name} is invalid.");
 
                 if ($current_name === $name)

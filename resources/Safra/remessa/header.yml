@@ -26,7 +26,7 @@ numero_conta:
 validar_trailler:
   pos: [35, 35]
   picture: 'X(01)'
-  default: ''
+  default: 'N'
 brancos01:
   pos: [36, 37]
   picture: 'X(02)'
