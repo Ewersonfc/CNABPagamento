@@ -41,7 +41,9 @@ class CNABPagamento
      */
     public function gerarArquivo(DataFile $dataFile)
     {
-        return $this->serviceRemessa->makeFile($dataFile);
+        $file = $this->serviceRemessa->makeFile($dataFile);
+        return json_encode([
+            'file' => $file,
+        ]);
     }
-
 }
