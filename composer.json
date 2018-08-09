@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "symfony/yaml": "^4.1",
+        "symfony/yaml": "v3.1.10",
         "mikehaertl/php-tmpfile": "^1.1"
     },
     "autoload": {
