@@ -87,8 +87,13 @@ class RemessaFactory
 
         if($pictureData['firstType'] == 9)
             return str_pad($valueDefined, $pictureData['firstQuantity'], "0", STR_PAD_LEFT);
-        if($pictureData['firstType'] == 'X')
-            return str_pad($valueDefined, $pictureData['firstQuantity'], " ", STR_PAD_LEFT);
+        if($pictureData['firstType'] == 'X') {
+            return preg_replace(
+                "/&([a-z])[a-z]+;/i",
+                "$1",
+                str_pad($valueDefined, $pictureData['firstQuantity'], " ", STR_PAD_LEFT)
+            );
+        }
     }
 
     /**
@@ -133,9 +138,8 @@ class RemessaFactory
                     throw new LayoutException($message);
             }
             unset($nameField, $fieldData, $arrayKeys, $lastField);
-            $this->content .= $detail;
+            $this->content .= $detail . PHP_EOL;
         }
-        $this->content .= PHP_EOL;
     }
 
     /**
@@ -157,7 +161,7 @@ class RemessaFactory
                 throw new LayoutException("O Campo {$nameField} deve conter caracteres neste padrão: {$fieldData['picture']}");
         }
         unset($nameField, $fieldData);
-        $this->content .= $trailer. PHP_EOL;
+        $this->content .= $trailer;
     }
 
     /**
