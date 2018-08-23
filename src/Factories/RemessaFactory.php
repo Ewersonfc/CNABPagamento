@@ -88,11 +88,10 @@ class RemessaFactory
         if($pictureData['firstType'] == 9)
             return str_pad($valueDefined, $pictureData['firstQuantity'], "0", STR_PAD_LEFT);
         if($pictureData['firstType'] == 'X') {
-            return preg_replace(
-                "/&([a-z])[a-z]+;/i",
-                "$1",
-                str_pad($valueDefined, $pictureData['firstQuantity'], " ", STR_PAD_LEFT)
-            );
+            return str_pad(strtr(
+                    utf8_decode($valueDefined),
+                    utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY')
+                , $pictureData['firstQuantity'], " ", STR_PAD_LEFT);
         }
     }
 
