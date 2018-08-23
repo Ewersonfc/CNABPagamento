@@ -92,6 +92,7 @@ class RemessaFactory
                     utf8_decode($valueDefined),
                     utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY')
                 , $pictureData['firstQuantity'], " ", STR_PAD_LEFT);
+            
         }
     }
 
