@@ -50,7 +50,7 @@ codigo_banco:
 nome_banco:
   pos: [80, 94]
   picture: 'X(15)'
-  default: ''
+  default: 'BANCO SAFRA S/A'
 data_arquivo:
   pos: [95, 100]
   picture: '9(06)'
@@ -70,7 +70,7 @@ brancos03:
 valida_documento:
   pos: [388, 388]
   picture: 'X(01)'
-  default: ''
+  default: 'N'
 numero_arquivo:
   pos: [389, 394]
   picture: '9(06)'
