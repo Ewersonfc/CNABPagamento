@@ -1,0 +1,159 @@
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default: 1
+codigo_inscricao:
+  pos: [2, 3]
+  picture: '9(02)'
+numero_inscricao:
+  pos: [4, 17]
+  picture: '9(14)'
+numero_conta:
+  pos: [18, 25]
+  picture: '9(08)'
+brancos01:
+  pos: [26, 28]
+  picture: 'X(03)'
+  default: ' '
+codigo_agencia:
+  pos: [29, 35]
+  picture: '9(07)'
+brancos02:
+  pos: [36, 37]
+  picture: 'X(02)'
+  default: ' '
+exclusivo:
+  pos: [38, 62]
+  picture: 'X(25)'
+codigo_fornecedor:
+  pos: [63, 76]
+  picture: '9(14)'
+tipo_documento:
+  pos: [77, 79]
+  picture: 'X(03)'
+numero_compromisso:
+  pos: [80, 89]
+  picture: 'X(10)'
+sequencia_compromisso:
+  pos: [90, 90]
+  picture: 'X(1)'
+data_pagamento:
+  pos: [91, 98]
+  picture: 'X(08)'
+data_vencimento:
+  pos: [99, 106]
+  picture: 'X(08)'
+negociacao_compromisso:
+  pos: [107, 107]
+  picture: 'X(01)'
+codigo_operacao:
+  pos: [108, 108]
+  picture: 'X(01)'
+  default: 'L'
+codigo_ocorrencia:
+  pos: [109, 110]
+  picture: '9(02)'
+data_ocorrencia:
+  pos: [111, 116]
+  picture: '9(06)'
+  date_format: '%d%m%Y'
+seu_numero:
+  pos: [117, 126]
+  picture: 'X(10)'
+banco_destino:
+  pos: [127, 129]
+  picture: '9(03)'
+numero_lote:
+  pos: [130, 135]
+  picture: '9(06)'
+sequencia_lote:
+  pos: [136, 139]
+  picture: '9(04)'
+brancos03:
+  pos: [140, 146]
+  picture: 'X(07)'
+  default: ' '
+data_vencimento:
+  pos: [147, 152]
+  picture: '9(06)'
+valor_compromisso:
+  pos: [153, 165]
+  picture: '9(13)'
+valor_multa:
+  pos: [166, 178]
+  picture: '9(13)'
+zeros01:
+  pos: [179, 191]
+  picture: '9(13)'
+valor_abatimento:
+  pos: [192, 204]
+  picture: '9(13)'
+valor_desconto:
+  pos: [205, 217]
+  picture: '9(13)'
+valor_pagamento:
+  pos: [218, 230]
+  picture: '9(13)'
+valor_autorizado:
+  pos: [231, 243]
+  picture: '9(13)'
+tipo_pagamento:
+  pos: [244, 246]
+  picture: 'X(03)'
+banco_destino:
+  pos: [247, 249]
+  picture: '9(03)'
+agencia_destino:
+  pos: [250, 256]
+  picture: 'X(07)'
+compensacao_destino:
+  pos: [257, 259]
+  picture: '9(03)'
+numero_conta_corrente:
+  pos: [260, 269]
+  picture: '9(10)'
+agencia_destino:
+  pos: [270, 289]
+  picture: 'X(20)'
+numero_cheque:
+  pos: [290, 295]
+  picture: '9(06)'
+nome_fornecedor:
+  pos: [296, 325]
+  picture: 'X(30)'
+sacador_avalista:
+  pos: [326, 345]
+  picture: 'X(20)'
+numero_lancamento:
+  pos: [346, 354]
+  picture: '9(09)'
+codigo_ISPB:
+  pos: [355, 362]
+  picture: '9(08)'
+brancos04:
+  pos: [363, 376]
+  picture: 'X(14)'
+  default: ' '
+agencia_pagamento:
+  pos: [377, 383]
+  picture: '9(07)'
+brancos05:
+  pos: [384, 384]
+  picture: 'X(01)'
+  default: ' '
+data_pagamento:
+  pos: [385, 390]
+  picture: '9(06)'
+codigo_moeda:
+  pos: [391, 394]
+  picture: 'X(04)'
+numero_sequencial:
+  pos: [395, 400]
+  picture: '9(06)'
+
+
+
+
+
+
+

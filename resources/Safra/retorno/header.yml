@@ -1,0 +1,70 @@
+#documento baseado na documentação safra
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default: 0
+codigo_arquivo:
+  pos: [2, 2]
+  picture: '9(01)'
+  default: 2
+identificacao_arquivo:
+  pos: [3, 9]
+  picture: 'X(07)'
+  default: 'RETORNO'
+codigo_servico:
+  pos: [10, 11]
+  picture: '9(02)'
+  default: 11
+identificacao_servico:
+  pos: [12, 26]
+  picture: 'X(15)'
+  default: 'PAGTOS FORNECED'
+numero_conta:
+  pos: [27, 34]
+  picture: '9(08)'
+brancos01:
+  pos: [35, 37]
+  picture: 'X(03)'
+  default: ' '
+codigo_agencia:
+  pos: [38, 44]
+  picture: '9(07)'
+brancos02:
+  pos: [45, 46]
+  picture: 'X(02)'
+  default: ' '
+nome_cliente:
+  pos: [47, 76]
+  picture: 'X(30)'
+banco_depositante:
+  pos: [77, 79]
+  picture: '9(03)'
+nome_banco:
+  pos: [80, 94]
+  picture: 'X(15)'
+data_gravacao:
+  pos: [95, 100]
+  picture: '9(06)'
+  date_format: '%d%m%y'
+brancos03:
+  pos: [101, 103]
+  picture: 'X(03)'
+  default: ' '
+documento_cliente:
+  pos: [104, 117]
+  picture: '9(14)'
+data_geracao:
+  pos: [118, 125]
+  picture: '9(08)'
+  date_format: '%d%m%Y'
+brancos04:
+  pos: [126, 388]
+  picture: 'X(263)'
+  default: ' '
+numero_arquivo:
+  pos: [389, 394]
+  picture: '9(06)'
+numero_sequencial:
+  pos: [395, 400]
+  picture: '9(06)'
+

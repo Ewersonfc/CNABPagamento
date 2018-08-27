@@ -1,0 +1,128 @@
+codigo_registro:
+  pos: [1, 1]
+  picture: '9(01)'
+  default: 1
+codigo_inscricao:
+  pos: [2, 3]
+  picture: '9(02)'
+numero_inscricao:
+  pos: [4, 17]
+  picture: '9(14)'
+numero_conta:
+  pos: [18, 25]
+  picture: '9(08)'
+brancos01:
+  pos: [26, 28]
+  picture: 'X(03)'
+  default: ' '
+codigo_agencia:
+  pos: [29, 35]
+  picture: '9(07)'
+brancos02:
+  pos: [36, 37]
+  picture: 'X(02)'
+exclusivo:
+  pos: [38, 62]
+  picture: 'X(25)'
+codigo_fornecedor:
+  pos: [63, 76]
+  picture: '9(14)'
+tipo_documento:
+  pos: [77, 79]
+  picture: 'X(03)'
+numero_compromisso:
+  pos: [80, 89]
+  picture: 'X(10)'
+data_pagamento:
+  pos: [90, 98]
+  picture: 'X(08)'
+  date_format: '%d%m%Y'
+data_vencimento:
+  pos: [99, 106]
+  picture: 'X(08)'
+  date_format: '%d%m%Y'
+negociacao_compromisso:
+  pos: [107, 107]
+  picture: 'X(01)'
+codigo_operacao:
+  pos: [108, 108]
+  picture: 'X(01)'
+codigo_ocorrencia:
+  pos: [109, 110]
+  picture: '9(02)'
+data_ocorrencia:
+  pos: [111, 116]
+  picture: '9(06)'
+  date_format: '%d%m%y'
+numero_compromisso:
+  pos: [117, 126]
+  picture: 'X(10)'
+banco_destino:
+  pos: [127, 129]
+  picture: '9(03)'
+numero_lote:
+  pos: [130, 135]
+  picture: '9(06)'
+sequencia_lote:
+  pos: [136, 139]
+  picture: '9(04)'
+tipo_pagamento:
+  pos: [140, 142]
+  picture: 'X(03)'
+brancos03:
+  pos: [143, 146]
+  picture: 'X(04)'
+  default: ' '
+data_vencimento:
+  pos: [147, 152]
+  picture: '9(06)'
+  date_format: '%d%m%y'
+valor_compromisso:
+  pos: [153, 165]
+  picture: '9(13)'
+codigo_rejeicao:
+  pos: [166, 168]
+  picture: 'X(03)'
+codigo_motivo_rejeicao:
+  pos: [169, 273]
+  picture: 'X(105)'
+brancos04:
+  pos: [274, 285]
+  picture: 'X(02)'
+codigo_ISPB:
+  pos: [286, 293]
+  picture: '9(08)'
+brancos05:
+  pos: [294, 295]
+  picture: 'X(02)'
+nome_fornecedor:
+  pos: [296, 325]
+  picture: 'X(30)'
+sacador_avalista:
+  pos: [326, 345]
+  picture: 'X(20)'
+agencia_destino:
+  pos: [346, 352]
+  picture: 'X(07)'
+conta_destino:
+  pos: [353, 362]
+  picture: 'X(10)'
+aceite_DDA:
+  pos: [363, 363]
+  picture: 'X(01)'
+tipo_pessoa_DDA:
+  pos: [364, 364]
+  picture: 'X(01)'
+cnpj_DDA:
+  pos: [365, 379]
+  picture: 'X(15)'
+seu_numero_DDA:
+  pos: [380, 394]
+  picture: 'X(15)'
+numero_sequencial:
+  pos: [395, 400]
+  picture: '9(06)'
+
+
+
+
