@@ -7,6 +7,7 @@
  */
 namespace Ewersonfc\CNABPagamento\Format;
 use Ehtl\Model\TipoPagamento;
+use Ewersonfc\CNABPagamento\Constants\TipoRetorno;
 use Ewersonfc\CNABPagamento\Constants\TipoTransacao;
 use Ewersonfc\CNABPagamento\Exceptions\HeaderYamlException;
 use Ewersonfc\CNABPagamento\Exceptions\LayoutException;
@@ -59,9 +60,9 @@ class Yaml extends \Symfony\Component\Yaml\Yaml
      * @throws HeaderYamlException
      * @throws LayoutException
      */
-    public function readDetail($typeLayout)
+    public function readDetail($type)
     {
-        switch ($typeLayout) {
+        switch ($type) {
             case TipoTransacao::BOLETO:
                 $filename = "{$this->path}/detalhe_boleto.yml";
                 break;
@@ -71,10 +72,19 @@ class Yaml extends \Symfony\Component\Yaml\Yaml
             case TipoTransacao::CHEQUE:
                 $filename = "{$this->path}/detalhe_cheque.yml";
                 break;
+            case TipoRetorno::CONFIRMACAO_REJEICAO:
+                $filename = "{$this->path}/confirmacao_rejeicao.yml";
+                break;
+            case TipoRetorno::LIQUIDACAO:
+                $filename = "{$this->path}/liquidacao.yml";
+                break;
+            case TipoRetorno::DDA:
+                $filename = "{$this->path}/NULL.yml";
+                break;
         }
 
         if(!file_exists($filename))
-            throw new HeaderYamlException("Arquivo de configuração detail_{$typeLayout}.yml não encontrado em: $this->path");
+            throw new HeaderYamlException("Arquivo de configuração detail_{$type}.yml não encontrado em: $this->path");
 
         $this->fields = $this->parse(file_get_contents($filename));
 

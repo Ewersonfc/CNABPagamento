@@ -7,8 +7,11 @@
  */
 namespace Ewersonfc\CNABPagamento;
 
+use Ewersonfc\CNABPagamento\Constants\TipoRetorno;
 use Ewersonfc\CNABPagamento\Entities\DataFile;
+use Ewersonfc\CNABPagamento\Exceptions\FileRetornoException;
 use Ewersonfc\CNABPagamento\Services\ServiceRemessa;
+use Ewersonfc\CNABPagamento\Services\ServiceRetorno;
 
 /**
  * Class CNABPagamento
@@ -16,11 +19,14 @@ use Ewersonfc\CNABPagamento\Services\ServiceRemessa;
 class CNABPagamento
 {
     /**
-     * @var Bancos
+     * @var ServiceRemessa
      */
-    private $banco;
-
     private $serviceRemessa;
+
+    /**
+     * @var ServiceRetorno
+     */
+    private $serviceRetorno;
 
     /**
      * CNABPagamento constructor.
@@ -30,6 +36,7 @@ class CNABPagamento
     function __construct($banco)
     {
         $this->serviceRemessa = new ServiceRemessa(Bancos::getBankData($banco));
+        $this->serviceRetorno = new ServiceRetorno(Bancos::getBankData($banco));
     }
 
     /**
@@ -45,5 +52,22 @@ class CNABPagamento
         return json_encode([
             'file' => $file,
         ]);
+    }
+
+    /**
+     * @param $archivePath
+     * @throws \Exception
+     */
+    public function processarRetorno($archivePath, $tipoRetorno)
+    {
+        if(!in_array($tipoRetorno, [
+            TipoRetorno::CONFIRMACAO_REJEICAO,
+            TipoRetorno::LIQUIDACAO,
+            TipoRetorno::DDA,
+        ])) {
+            throw new FileRetornoException("Tipo de retorno definido não existe.");
+        };
+        $data = $this->serviceRetorno->readFile($archivePath, $tipoRetorno);
+        return $data;
     }
 }
