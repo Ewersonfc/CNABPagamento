@@ -56,18 +56,13 @@ class CNABPagamento
 
     /**
      * @param $archivePath
-     * @throws \Exception
+     * @param $tipoRetorno
+     * @return Factories\DataFile
+     * @throws FileRetornoException
      */
-    public function processarRetorno($archivePath, $tipoRetorno)
+    public function processarRetorno($archivePath)
     {
-        if(!in_array($tipoRetorno, [
-            TipoRetorno::CONFIRMACAO_REJEICAO,
-            TipoRetorno::LIQUIDACAO,
-            TipoRetorno::DDA,
-        ])) {
-            throw new FileRetornoException("Tipo de retorno definido não existe.");
-        };
-        $data = $this->serviceRetorno->readFile($archivePath, $tipoRetorno);
+        $data = $this->serviceRetorno->readFile($archivePath);
         return $data;
     }
 }

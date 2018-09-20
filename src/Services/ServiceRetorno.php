@@ -8,6 +8,7 @@
 
 namespace Ewersonfc\CNABPagamento\Services;
 
+use Ewersonfc\CNABPagamento\Bancos;
 use Ewersonfc\CNABPagamento\Exceptions\FileRetornoException;
 use Ewersonfc\CNABPagamento\Factories\RetornoFactory;
 use Ewersonfc\CNABPagamento\Format\Yaml;
@@ -59,7 +60,8 @@ class ServiceRetorno
 
     private function readDetailYml($tipoRetorno)
     {
-        return $this->yaml->readDetail($tipoRetorno);
+        $tipoArquivo = Bancos::getSafraDetailType($tipoRetorno);
+        return $this->yaml->readDetail($tipoArquivo);
     }
 
     /**
@@ -75,8 +77,6 @@ class ServiceRetorno
         }
         $this->dataFile = $data;
     }
-
-
 
     private function makefield($string, $field)
     {
@@ -102,14 +102,24 @@ class ServiceRetorno
         return $headerComplete;
     }
 
+    private function getTypeReturnByBank($detailCompletely)
+    {
+        switch ($this->banco['codigo_banco'])
+        {
+            case Bancos::SAFRA:
+                return $this->readDetailYml(substr($detailCompletely, 108, 108));
+            break;
+            default:
+                throw new \Exception("Não foi possivel toma danada");
+        }
+    }
 
-    private function matchDetailFileAndDetailData($tipoRetorno)
+    private function matchDetailFileAndDetailData()
     {
         $onlyDetails = array_slice($this->dataFile, 1, count(array_filter($this->dataFile)) - 2);
-        $detailYml = $this->readDetailYml($tipoRetorno);
-
         $detailComplete = [];
         foreach ($onlyDetails as $keyDetail => $detail) {
+            $detailYml = $this->getTypeReturnByBank($detail);
             foreach ($detailYml as $key => $field) {
                 $detailComplete[$keyDetail][$key] = $this->makefield($detail, $field);
             }
@@ -123,14 +133,17 @@ class ServiceRetorno
      * @param $tipoRetorno
      * @return \Ewersonfc\CNABPagamento\Factories\DataFile
      */
-    final public function readFile($filePath, $tipoRetorno)
+    final public function readFile($filePath)
     {
         $this->filePath = $filePath;
 
         $header = $this->matchHeaderFileAndHeaderData();
-        $detail = $this->matchDetailFileAndDetailData($tipoRetorno);
+        $detail = $this->matchDetailFileAndDetailData();
 
         $retornoFactory = new RetornoFactory($header, $detail);
-        return $retornoFactory->generateResponse();
+        if($this->banco = Bancos::SAFRA)
+            return $retornoFactory->generateSafraResponse();
+
+        return false;
     }
 }

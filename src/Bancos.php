@@ -7,6 +7,7 @@
  */
 namespace Ewersonfc\CNABPagamento;
 
+use Ewersonfc\CNABPagamento\Constants\TipoRetorno;
 use Ewersonfc\CNABPagamento\Exceptions\CNABPagamentoException;
 /**
  * Class Bancos
@@ -36,6 +37,19 @@ class Bancos
             default:
                 throw new CNABPagamentoException("Banco não encontrado.");
                 break;
+        }
+    }
+
+    public static function getSafraDetailType($type)
+    {
+        switch ($type)
+        {
+            case 'C':
+                return TipoRetorno::CONFIRMACAO_REJEICAO;
+            case 'L':
+                return TipoRetorno::LIQUIDACAO;
+            default:
+                return TipoRetorno::CONFIRMACAO_REJEICAO;
         }
     }
 }

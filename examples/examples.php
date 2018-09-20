@@ -67,8 +67,7 @@ use Ewersonfc\CNABPagamento\Helpers\Helper;
 $cnab = new CNABPagamento(\Ewersonfc\CNABPagamento\Bancos::SAFRA);
 //$tipoRetorno = 'confirmacao_rejeicao';
 //$data = $cnab->processarRetorno('/home/ewerson/Downloads/RETORNO_701EHTLRONL0042119206.txt', $tipoRetorno);
-$tipoRetorno = 'liquidacao';
-$data = $cnab->processarRetorno('/home/ewerson/Downloads/RETORNO_701EHTLRONL0042123031.txt', $tipoRetorno);
+$data = $cnab->processarRetorno('/home/ewerson/Downloads/RETORNO_701EHTLRONL0042119194.txt');
 
 echo '<pre>';
 print_r($data);
