@@ -12,6 +12,7 @@ use Ewersonfc\CNABPagamento\Bancos;
 use Ewersonfc\CNABPagamento\Exceptions\FileRetornoException;
 use Ewersonfc\CNABPagamento\Factories\RetornoFactory;
 use Ewersonfc\CNABPagamento\Format\Yaml;
+use Ewersonfc\CNABPagamento\Entities\DataFile;
 
 /**
  * Class ServicoRetorno
@@ -116,7 +117,7 @@ class ServiceRetorno
 
     private function matchDetailFileAndDetailData()
     {
-        $onlyDetails = array_slice($this->dataFile, 1, count(array_filter($this->dataFile)) - 2);
+        $onlyDetails = array_slice($this->dataFile, 0, count(array_filter($this->dataFile)) - 1);
         $detailComplete = [];
         foreach ($onlyDetails as $keyDetail => $detail) {
             $detailYml = $this->getTypeReturnByBank($detail);
@@ -141,8 +142,13 @@ class ServiceRetorno
         $detail = $this->matchDetailFileAndDetailData();
 
         $retornoFactory = new RetornoFactory($header, $detail);
-        if($this->banco = Bancos::SAFRA)
-            return $retornoFactory->generateSafraResponse();
+        if($this->banco = Bancos::SAFRA) {
+            $retorno = new DataFile;
+            $retorno->header = $header;
+            $retorno->detail = $retornoFactory->generateSafraResponse();
+
+            return $retorno;
+        }
 
         return false;
     }
