@@ -58,7 +58,9 @@ class RetornoFactory
             $fileResponse->aprovado = $approved;
             $fileResponse->tipoAprovacao = $detail['codigo_operacao']['value'];
             if(!$approved) {
-                $fileResponse->rejeicao = $this->makeRejeicao($detail['codigo_motivo_rejeicao']['value']);
+                $fileResponse->rejeicao = $this->makeRejeicao(
+                    $detail['codigo_rejeicao']['value'].$detail['codigo_motivo_rejeicao']['value']
+                );
             }
             $fileResponse->registro = $detail['codigo_registro']['value'];
             $fileResponse->inscricao = $detail['codigo_registro']['value'];
@@ -78,8 +80,7 @@ class RetornoFactory
 
             $response[] = $fileResponse;
         }
-        print_r($response);
-        exit();
+        return $response;
     }
 }
 
