@@ -54,7 +54,7 @@ data_ocorrencia:
   pos: [111, 116]
   picture: '9(06)'
   date_format: '%d%m%y'
-numero_compromisso:
+seu_numero:
   pos: [117, 126]
   picture: 'X(10)'
 banco_destino:

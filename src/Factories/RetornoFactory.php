@@ -67,7 +67,7 @@ class RetornoFactory
             $fileResponse->agencia = $detail['codigo_agencia']['value'];
             $fileResponse->fornecedor = $detail['codigo_fornecedor']['value'];
             $fileResponse->documento = $detail['tipo_documento']['value'];
-            $fileResponse->compromisso = $detail['numero_compromisso']['value'];
+            $fileResponse->compromisso = trim($detail['seu_numero']['value']);
             $fileResponse->dataPagamento = $detail['data_pagamento']['value'];
             $fileResponse->dataVencimento = $detail['data_vencimento']['value'];
             $fileResponse->operacao = $detail['codigo_operacao']['value'];
