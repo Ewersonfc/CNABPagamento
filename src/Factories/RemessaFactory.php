@@ -115,7 +115,7 @@ class RemessaFactory
                 throw new LayoutException($message);
         }
         unset($nameField, $fieldData, $arrayKeys, $lastField);
-        $this->content .= PHP_EOL;
+        $this->content .= "\r\n";
     }
 
     /**
@@ -138,7 +138,7 @@ class RemessaFactory
                     throw new LayoutException($message);
             }
             unset($nameField, $fieldData, $arrayKeys, $lastField);
-            $this->content .= $detail . PHP_EOL;
+            $this->content .= $detail . "\r\n";
         }
     }
 
